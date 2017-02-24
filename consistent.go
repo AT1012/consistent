@@ -265,3 +265,12 @@ func sliceContainsMember(set []string, member string) bool {
 	}
 	return false
 }
+
+func (c *Consistent) IsMember(member string) bool{
+	for k := range c.members{
+		if member == k {
+			return true
+		}
+	}
+	return false
+}
